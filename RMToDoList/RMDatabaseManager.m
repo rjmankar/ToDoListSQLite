@@ -57,4 +57,51 @@
     NSLog(@"database is not present in main bundle please check.");
     
 }
+
+
+
+-(BOOL)executeGivenQuery:(NSString *)query{
+    
+    BOOL status=false;
+    sqlite3_stmt *statment;
+    const char *UTFQuery=[query UTF8String];
+    const char *UTFDatabasePath=[[self getPathOfDatabase] UTF8String];
+    if (sqlite3_open(UTFDatabasePath,&myDataBase) == SQLITE_OK){
+   
+        if (sqlite3_prepare_v2(myDataBase,UTFQuery,-1,&statment,NULL)==SQLITE_OK) {
+            if (sqlite3_step(statment) == SQLITE_DONE) {
+                status = true;
+            }
+            }
+        
+        sqlite3_close(myDataBase);
+        }
+    return status;
+    
+    }
+
+-(NSArray *)executeSelectedQuery:(NSString *)query{
+     NSMutableArray *allTasks = [[NSMutableArray alloc]init];
+    return allTasks;
+}
+
+-(BOOL)insertTask:(Tasks *)taskModel{
+
+    
+    NSString *insertQuery=[NSString stringWithFormat:@"INSERT INTO TASKS(TASK_ID,TEXT,COMPLETED) VALUES('%@','%@','%@')",taskModel.Task_iD,taskModel.textName,taskModel.completed];
+    NSLog(@"%@",insertQuery);
+    
+    if ([[RMDatabaseManager sharedManager]executeGivenQuery:insertQuery]==YES) {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+    
+}
+
+
+
+
 @end
