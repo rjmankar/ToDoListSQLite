@@ -21,7 +21,7 @@
 -(NSString*)getPathOfDatabase;
 -(void)copyDataBaseFromMainBundleToSandBOX;
 -(BOOL)executeGivenQuery:(NSString *)query;
--(NSArray*)executeSelectedQuery:(NSString *)query;
+//-(NSArray*)executeSelectedQuery:(NSString *)query;
 
 -(BOOL)insertTask:(Tasks *)taskModel;
 

@@ -80,15 +80,15 @@
     
     }
 
--(NSArray *)executeSelectedQuery:(NSString *)query{
-     NSMutableArray *allTasks = [[NSMutableArray alloc]init];
-    return allTasks;
-}
+//-(NSArray *)executeSelectedQuery:(NSString *)query{
+//     NSMutableArray *allTasks = [[NSMutableArray alloc]init];
+//    return allTasks;
+//}
 
 -(BOOL)insertTask:(Tasks *)taskModel{
 
     
-    NSString *insertQuery=[NSString stringWithFormat:@"INSERT INTO TASKS(TASK_ID,TEXT,COMPLETED) VALUES('%@','%@','%@')",taskModel.Task_iD,taskModel.textName,taskModel.completed];
+    NSString *insertQuery=[NSString stringWithFormat:@"INSERT INTO TASKS(TASK_ID,TASK_NAME,COMPLETED) VALUES('%@','%@','%d')",taskModel.Task_iD,taskModel.textName,taskModel.completed];
     NSLog(@"%@",insertQuery);
     
     if ([[RMDatabaseManager sharedManager]executeGivenQuery:insertQuery]==YES) {
