@@ -16,7 +16,7 @@
 @property (nonatomic) int Id;
 
 - (instancetype)initWithID:(int)IDFrm
-                   Task_iD:(NSString *)Task_iD
+                   Task_iD:(NSString *)Task_ID
                    andText:(NSString *)textFrm
               andCompleted:(BOOL)completedFrm;
 

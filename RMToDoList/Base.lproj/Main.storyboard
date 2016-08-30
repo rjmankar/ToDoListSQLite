@@ -18,18 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnf-ZJ-0sR">
-                                <rect key="frame" x="20" y="50" width="560" height="30"/>
-                                <state key="normal" title="INSERT IN U R To Do List">
-                                    <color key="titleShadowColor" red="0.2348324453" green="1" blue="0.00076923088310000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="insertButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BsI-OU-LQ7"/>
-                                </connections>
-                            </button>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hxf-Un-OJU">
-                                <rect key="frame" x="20" y="80" width="560" height="520"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hxf-Un-OJU">
+                                <rect key="frame" x="20" y="125" width="560" height="520"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" red="1" green="0.3903395757" blue="0.49384537589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="LHi-NO-ZZ3">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LHi-NO-ZZ3" id="8d4-Kh-41K">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="tzP-se-KUT"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="14I-av-Rb3"/>
@@ -41,6 +43,15 @@
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnf-ZJ-0sR">
+                                <rect key="frame" x="20" y="94" width="560" height="30"/>
+                                <state key="normal" title="INSERT IN U R To Do List">
+                                    <color key="titleShadowColor" red="0.2348324453" green="1" blue="0.00076923088310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="insertButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BsI-OU-LQ7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -83,13 +94,46 @@
                     <view key="view" contentMode="scaleToFill" id="EmC-bO-n3b">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSJ-0x-lzn">
+                                <rect key="frame" x="20" y="146" width="560" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2o-8o-NEt">
+                                <rect key="frame" x="20" y="267" width="560" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7d-G0-vkN">
+                                <rect key="frame" x="20" y="370" width="560" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Tg-Rn-Dxg">
+                                <rect key="frame" x="20" y="71" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g7d-G0-vkN" firstAttribute="top" secondItem="c2o-8o-NEt" secondAttribute="bottom" constant="73" id="5rS-Y7-0YP"/>
+                            <constraint firstItem="2Tg-Rn-Dxg" firstAttribute="trailing" secondItem="iSJ-0x-lzn" secondAttribute="trailing" id="Jr6-Qn-b16"/>
+                            <constraint firstItem="c2o-8o-NEt" firstAttribute="leading" secondItem="g7d-G0-vkN" secondAttribute="leading" id="KCk-TO-Dg0"/>
+                            <constraint firstItem="2Tg-Rn-Dxg" firstAttribute="trailing" secondItem="EmC-bO-n3b" secondAttribute="trailingMargin" id="LnQ-B9-dNa"/>
+                            <constraint firstItem="c2o-8o-NEt" firstAttribute="trailing" secondItem="g7d-G0-vkN" secondAttribute="trailing" id="Net-kv-maL"/>
+                            <constraint firstItem="iSJ-0x-lzn" firstAttribute="top" secondItem="2Tg-Rn-Dxg" secondAttribute="bottom" constant="45" id="R7E-Wt-2vB"/>
+                            <constraint firstItem="iSJ-0x-lzn" firstAttribute="leading" secondItem="c2o-8o-NEt" secondAttribute="leading" id="TTK-SQ-M2I"/>
+                            <constraint firstItem="2Tg-Rn-Dxg" firstAttribute="top" secondItem="wI9-by-9wV" secondAttribute="bottom" constant="51" id="a3l-5W-4MM"/>
+                            <constraint firstItem="2Tg-Rn-Dxg" firstAttribute="leading" secondItem="iSJ-0x-lzn" secondAttribute="leading" id="gQm-fU-UBR"/>
+                            <constraint firstItem="iSJ-0x-lzn" firstAttribute="trailing" secondItem="c2o-8o-NEt" secondAttribute="trailing" id="lmY-6P-C5u"/>
+                            <constraint firstItem="c2o-8o-NEt" firstAttribute="top" secondItem="iSJ-0x-lzn" secondAttribute="bottom" constant="91" id="pwA-Af-pP4"/>
+                            <constraint firstItem="2Tg-Rn-Dxg" firstAttribute="leading" secondItem="EmC-bO-n3b" secondAttribute="leadingMargin" id="xdD-6J-BMx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d2V-a0-5A5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eh2-CY-A5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="1083"/>
+            <point key="canvasLocation" x="1057" y="847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RCr-SS-vJO">
@@ -108,24 +152,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1p-xS-qhK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="279" y="106"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="lF2-RJ-LVC">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yHw-gX-ySW" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c5j-yC-oZW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="dxQ-VV-l6C" kind="relationship" relationship="rootViewController" id="CF6-sF-ovO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8YS-jk-srp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1065" y="1083"/>
         </scene>
     </scenes>
 </document>

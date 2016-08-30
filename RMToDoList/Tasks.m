@@ -26,12 +26,12 @@
 }
 
 -(instancetype)initWithID:(int)IDFrm
-                  Task_iD:(NSString *)Task_iD
+                  Task_iD:(NSString *)Task_ID
                   andText:(NSString *)textFrom
              andCompleted:(BOOL)completedFrm{
     
     Tasks *taskModelObject=[[Tasks alloc]init];
-    taskModelObject.Task_iD=Task_iD;
+    taskModelObject.Task_iD=Task_ID;
     taskModelObject.textName=textFrom;
     taskModelObject.Id=IDFrm;
     taskModelObject.completed=completedFrm;

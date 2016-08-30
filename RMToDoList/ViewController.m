@@ -28,13 +28,14 @@ self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"t
 }
 -(void)viewDidAppear:(BOOL)animated {
     
+    allTasksInList = [[RMDatabaseManager sharedManager]getAllTask];
+    
     [self updateTaskTableView];
 }
 
 //-(void)fetchAllTask {
 //    
-//    allTasksInList = [[RMDatabaseManager sharedManager]executeSelectedQuery:@"SELECT * FROM TASKS"];
-
+//    allTasksInList = [[RMDatabaseManager sharedManager]executeGivenQuery:@"SELECT FROM TODOLISTDATA"];
 //}
 
 
@@ -79,8 +80,9 @@ self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"t
     
     
 }
--(void)insertTask:(NSString *)text {
-    if (text.length > 0 && ![text isEqualToString:@""]) {
+-(void)insertTaskToDatabase:(NSString *)text {
+    if (text.length > 0 && ![text isEqualToString:@""])
+    {
         
         Tasks *taskModel = [[Tasks alloc]init];
         taskModel.textName = text;
@@ -96,6 +98,7 @@ self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"t
         }
         
     }
+    [self.tableViewOutlet reloadData];
 }
 
 
@@ -105,7 +108,13 @@ self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"t
     
     NSString *text = self.textFieldToEnterTask.text;
     
-    [self insertTask:text];
+    [self insertTaskToDatabase:text];
 
 }
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
 @end

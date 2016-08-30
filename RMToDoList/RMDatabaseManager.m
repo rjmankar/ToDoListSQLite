@@ -81,14 +81,11 @@
     }
 
 //-(NSArray *)executeSelectedQuery:(NSString *)query{
-//     NSMutableArray *allTasks = [[NSMutableArray alloc]init];
-//    return allTasks;
-//}
 
 -(BOOL)insertTask:(Tasks *)taskModel{
 
     
-    NSString *insertQuery=[NSString stringWithFormat:@"INSERT INTO TASKS(TASK_ID,TASK_NAME,COMPLETED) VALUES('%@','%@','%d')",taskModel.Task_iD,taskModel.textName,taskModel.completed];
+    NSString *insertQuery=[NSString stringWithFormat:@"INSERT INTO TODOLISTDATA (TASK_ID,TASK_NAME,COMPLETED) VALUES('%@','%@','%d')",taskModel.Task_iD,taskModel.textName,taskModel.completed];
     NSLog(@"%@",insertQuery);
     
     if ([[RMDatabaseManager sharedManager]executeGivenQuery:insertQuery]==YES) {
@@ -98,6 +95,63 @@
     {
         return NO;
     }
+    
+}
+
+-(NSArray *)getAllTask {
+    
+    NSMutableArray *allTasks = [[NSMutableArray alloc]init];
+    
+    NSString *selectQuery = @"SELECT * FROM TODOLISTDATA";
+    
+    const char * UTFQuery = [selectQuery UTF8String];
+    
+    sqlite3_stmt *statement;
+    
+    NSString *databasePath = [self getPathOfDatabase];
+    const char * UTFDatabasePath = [databasePath UTF8String];
+
+    
+    if (sqlite3_open(UTFDatabasePath, &myDataBase) == SQLITE_OK) {
+        if (sqlite3_prepare_v2(myDataBase, UTFQuery, -1, &statement, NULL) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                
+                int row_id = sqlite3_column_bytes(statement,0);
+                
+                const unsigned char * task_id = sqlite3_column_text(statement,1);
+                
+                NSString *task_idString = [NSString stringWithFormat:@"%s",(const char *)task_id];
+                
+                const unsigned char * text = sqlite3_column_text(statement,2);
+                
+                NSString *textString = [NSString stringWithFormat:@"%s",(const char *)text];
+                
+                
+                int completed = sqlite3_column_bytes(statement,3);
+                
+                BOOL completedBOOL;
+                
+                if (completed == 0) {
+                    completedBOOL = NO;
+                }
+                else if (completed == 1) {
+                    completedBOOL = YES;
+                }
+                else {
+                    completedBOOL = NO;
+                }
+                
+                Tasks *taskFromDatabase = [[Tasks alloc]initWithID:row_id Task_iD:task_idString andText:textString andCompleted:completedBOOL];
+                
+                [allTasks addObject:taskFromDatabase];
+            }
+            
+        }
+        sqlite3_close(myDataBase);
+    }
+    
+    return (NSArray *)allTasks;
+    
     
 }
 
