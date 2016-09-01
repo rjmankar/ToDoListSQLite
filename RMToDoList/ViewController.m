@@ -53,7 +53,11 @@ self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"t
 
 
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
 
+    return YES;
+}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -78,8 +82,21 @@ self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"t
     
     return cell;
     
-    
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ModifyController *modifyView=[self.storyboard instantiateViewControllerWithIdentifier:@"ModifyController"];
+}
+
+    
+    
+
+
+
+
+
+
 -(void)insertTaskToDatabase:(NSString *)text {
     if (text.length > 0 && ![text isEqualToString:@""])
     {
@@ -112,9 +129,6 @@ self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"t
 
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return YES;
-}
+
 
 @end

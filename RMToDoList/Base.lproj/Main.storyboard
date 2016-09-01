@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="1075" y="119"/>
         </scene>
-        <!--View Controller-->
+        <!--Modify Controller-->
         <scene sceneID="fRs-FO-fL4">
             <objects>
-                <viewController id="dxQ-VV-l6C" sceneMemberID="viewController">
+                <viewController id="dxQ-VV-l6C" customClass="ModifyController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wI9-by-9wV"/>
                         <viewControllerLayoutGuide type="bottom" id="V6p-q8-kXM"/>

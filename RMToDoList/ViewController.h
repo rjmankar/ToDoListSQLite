@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RMDatabaseManager.h"
+#import "ModifyController.h"
 
 
 

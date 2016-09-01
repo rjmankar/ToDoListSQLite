@@ -18,6 +18,7 @@
 		6B5202F61D6DD5E700F7F395 /* Tasks.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5202F51D6DD5E700F7F395 /* Tasks.m */; };
 		6B5202F91D6DD61900F7F395 /* RMDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5202F81D6DD61900F7F395 /* RMDatabaseManager.m */; };
 		6B5203011D6DE01800F7F395 /* todo in Resources */ = {isa = PBXBuildFile; fileRef = 6B5203001D6DE01800F7F395 /* todo */; };
+		73A365471D75C7B0003587FD /* ModifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A365461D75C7B0003587FD /* ModifyController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		6B5202F81D6DD61900F7F395 /* RMDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDatabaseManager.m; sourceTree = "<group>"; };
 		6B5203001D6DE01800F7F395 /* todo */ = {isa = PBXFileReference; lastKnownFileType = file; path = todo; sourceTree = "<group>"; };
 		6B5203021D6DE65600F7F395 /* AllConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllConstants.h; sourceTree = "<group>"; };
+		73A365451D75C7B0003587FD /* ModifyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyController.h; sourceTree = "<group>"; };
+		73A365461D75C7B0003587FD /* ModifyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,8 @@
 		6B5202CD1D6DCD6900F7F395 = {
 			isa = PBXGroup;
 			children = (
+				73A365451D75C7B0003587FD /* ModifyController.h */,
+				73A365461D75C7B0003587FD /* ModifyController.m */,
 				6B5202F21D6DD56900F7F395 /* libsqlite3.tbd */,
 				6B5202D81D6DCD6900F7F395 /* RMToDoList */,
 				6B5202D71D6DCD6900F7F395 /* Products */,
@@ -178,6 +183,7 @@
 				6B5202DE1D6DCD6900F7F395 /* AppDelegate.m in Sources */,
 				6B5202F91D6DD61900F7F395 /* RMDatabaseManager.m in Sources */,
 				6B5202DB1D6DCD6900F7F395 /* main.m in Sources */,
+				73A365471D75C7B0003587FD /* ModifyController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +334,7 @@
 				6B5202EF1D6DCD6900F7F395 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
