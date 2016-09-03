@@ -87,6 +87,7 @@ self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"t
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ModifyController *modifyView=[self.storyboard instantiateViewControllerWithIdentifier:@"ModifyController"];
+    
 }
 
     

@@ -24,7 +24,7 @@
                                 <color key="sectionIndexColor" red="1" green="0.3903395757" blue="0.49384537589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="LHi-NO-ZZ3">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LHi-NO-ZZ3" id="8d4-Kh-41K">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>

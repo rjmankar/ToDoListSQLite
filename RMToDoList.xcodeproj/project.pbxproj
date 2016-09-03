@@ -40,8 +40,8 @@
 		6B5202F81D6DD61900F7F395 /* RMDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDatabaseManager.m; sourceTree = "<group>"; };
 		6B5203001D6DE01800F7F395 /* todo */ = {isa = PBXFileReference; lastKnownFileType = file; path = todo; sourceTree = "<group>"; };
 		6B5203021D6DE65600F7F395 /* AllConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllConstants.h; sourceTree = "<group>"; };
-		73A365451D75C7B0003587FD /* ModifyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyController.h; sourceTree = "<group>"; };
-		73A365461D75C7B0003587FD /* ModifyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyController.m; sourceTree = "<group>"; };
+		73A365451D75C7B0003587FD /* ModifyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModifyController.h; path = ../ModifyController.h; sourceTree = "<group>"; };
+		73A365461D75C7B0003587FD /* ModifyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModifyController.m; path = ../ModifyController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +59,6 @@
 		6B5202CD1D6DCD6900F7F395 = {
 			isa = PBXGroup;
 			children = (
-				73A365451D75C7B0003587FD /* ModifyController.h */,
-				73A365461D75C7B0003587FD /* ModifyController.m */,
 				6B5202F21D6DD56900F7F395 /* libsqlite3.tbd */,
 				6B5202D81D6DCD6900F7F395 /* RMToDoList */,
 				6B5202D71D6DCD6900F7F395 /* Products */,
@@ -89,6 +87,8 @@
 				6B5202F81D6DD61900F7F395 /* RMDatabaseManager.m */,
 				6B5202DF1D6DCD6900F7F395 /* ViewController.h */,
 				6B5202E01D6DCD6900F7F395 /* ViewController.m */,
+				73A365451D75C7B0003587FD /* ModifyController.h */,
+				73A365461D75C7B0003587FD /* ModifyController.m */,
 				6B5202E21D6DCD6900F7F395 /* Main.storyboard */,
 				6B5202E51D6DCD6900F7F395 /* Assets.xcassets */,
 				6B5202E71D6DCD6900F7F395 /* LaunchScreen.storyboard */,
