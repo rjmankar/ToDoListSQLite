@@ -16,25 +16,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    [self initialiseScreen];
     // Do any additional setup after loading the view.
 }
 
-//-(void)initialiseScreen{
-//    
-//    selectedTask=self.taskSelected;
-//    
-//    
-//    
-//    
-//}
-
-
-
-
-
-
-
-
+-(void)initialiseScreen{
+    
+    selectedTask=self.taskSelected;
+    self.updateTaskTextField.text=selectedTask.textName;
+    self.updateButtonOutlet.enabled=NO;
+    priviousTextInTextField=selectedTask.textName;
+    self.updateTaskTextField.enabled=NO;
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -60,8 +56,10 @@
 - (IBAction)updateTaskButtonAction:(id)sender {
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
+-(BOOL)textFieldShouldReturn:(UITextField *)updateTaskTextField {
+    [self.updateTaskTextField resignFirstResponder];
+//    NSString *tempText=self.updateTaskTextField;
+    
     
     return YES;
 }

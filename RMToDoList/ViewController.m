@@ -54,7 +54,8 @@ self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"t
 
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
+    [self.textFieldToEnterTask resignFirstResponder];
+    
 
     return YES;
 }

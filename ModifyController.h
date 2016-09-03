@@ -11,12 +11,13 @@
 #import "RMDatabaseManager.h"
 
 @interface ModifyController : UIViewController<UITextFieldDelegate>
-//{
-//    Tasks *selectedTask;
-//    NSString *priviousTextInTextField;
-//    NSString *newTextInTextField;
-//    
-//}
+{
+    Tasks *selectedTask;
+    NSString *priviousTextInTextField;
+    NSString *newTextInTextField;
+
+    
+}
 
 @property(nonatomic,retain) Tasks *taskSelected;
 @property (strong, nonatomic) IBOutlet UITextField *updateTaskTextField;
