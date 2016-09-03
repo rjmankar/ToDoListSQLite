@@ -86,7 +86,7 @@
         <!--Modify Controller-->
         <scene sceneID="fRs-FO-fL4">
             <objects>
-                <viewController id="dxQ-VV-l6C" customClass="ModifyController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ModifyController" id="dxQ-VV-l6C" customClass="ModifyController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wI9-by-9wV"/>
                         <viewControllerLayoutGuide type="bottom" id="V6p-q8-kXM"/>
@@ -96,40 +96,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSJ-0x-lzn">
-                                <rect key="frame" x="20" y="146" width="560" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="20" y="141" width="560" height="153"/>
+                                <color key="backgroundColor" red="1" green="0.93679803544292217" blue="0.6963882891805061" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="editTaskButtonAction:" destination="dxQ-VV-l6C" eventType="touchUpInside" id="TqF-wE-Kmw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2o-8o-NEt">
-                                <rect key="frame" x="20" y="267" width="560" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="20" y="294" width="560" height="153"/>
+                                <color key="backgroundColor" red="1" green="0.38879715020519645" blue="0.35019033948579759" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteTaskButtonAction:" destination="dxQ-VV-l6C" eventType="touchUpInside" id="Yk1-Q5-WLe"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7d-G0-vkN">
-                                <rect key="frame" x="20" y="370" width="560" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Tg-Rn-Dxg">
-                                <rect key="frame" x="20" y="71" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Task " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Tg-Rn-Dxg">
+                                <rect key="frame" x="20" y="71" width="560" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="3u9-bt-vuw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7d-G0-vkN">
+                                <rect key="frame" x="20" y="447" width="560" height="153"/>
+                                <color key="backgroundColor" red="0.49491293143108539" green="1" blue="0.89490785065838174" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateTaskButtonAction:" destination="dxQ-VV-l6C" eventType="touchUpInside" id="Be8-3b-aY5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="g7d-G0-vkN" firstAttribute="top" secondItem="c2o-8o-NEt" secondAttribute="bottom" constant="73" id="5rS-Y7-0YP"/>
+                            <constraint firstItem="g7d-G0-vkN" firstAttribute="top" secondItem="c2o-8o-NEt" secondAttribute="bottom" id="5rS-Y7-0YP"/>
                             <constraint firstItem="2Tg-Rn-Dxg" firstAttribute="trailing" secondItem="iSJ-0x-lzn" secondAttribute="trailing" id="Jr6-Qn-b16"/>
                             <constraint firstItem="c2o-8o-NEt" firstAttribute="leading" secondItem="g7d-G0-vkN" secondAttribute="leading" id="KCk-TO-Dg0"/>
                             <constraint firstItem="2Tg-Rn-Dxg" firstAttribute="trailing" secondItem="EmC-bO-n3b" secondAttribute="trailingMargin" id="LnQ-B9-dNa"/>
                             <constraint firstItem="c2o-8o-NEt" firstAttribute="trailing" secondItem="g7d-G0-vkN" secondAttribute="trailing" id="Net-kv-maL"/>
-                            <constraint firstItem="iSJ-0x-lzn" firstAttribute="top" secondItem="2Tg-Rn-Dxg" secondAttribute="bottom" constant="45" id="R7E-Wt-2vB"/>
+                            <constraint firstItem="iSJ-0x-lzn" firstAttribute="top" secondItem="2Tg-Rn-Dxg" secondAttribute="bottom" id="R7E-Wt-2vB"/>
                             <constraint firstItem="iSJ-0x-lzn" firstAttribute="leading" secondItem="c2o-8o-NEt" secondAttribute="leading" id="TTK-SQ-M2I"/>
+                            <constraint firstItem="g7d-G0-vkN" firstAttribute="height" secondItem="iSJ-0x-lzn" secondAttribute="height" id="Tof-bk-kgx"/>
+                            <constraint firstItem="c2o-8o-NEt" firstAttribute="height" secondItem="iSJ-0x-lzn" secondAttribute="height" id="XqM-Tg-v88"/>
+                            <constraint firstItem="g7d-G0-vkN" firstAttribute="width" secondItem="iSJ-0x-lzn" secondAttribute="width" id="Z0Z-Dg-A0F"/>
                             <constraint firstItem="2Tg-Rn-Dxg" firstAttribute="top" secondItem="wI9-by-9wV" secondAttribute="bottom" constant="51" id="a3l-5W-4MM"/>
+                            <constraint firstItem="c2o-8o-NEt" firstAttribute="width" secondItem="iSJ-0x-lzn" secondAttribute="width" id="bH8-CX-7s9"/>
                             <constraint firstItem="2Tg-Rn-Dxg" firstAttribute="leading" secondItem="iSJ-0x-lzn" secondAttribute="leading" id="gQm-fU-UBR"/>
                             <constraint firstItem="iSJ-0x-lzn" firstAttribute="trailing" secondItem="c2o-8o-NEt" secondAttribute="trailing" id="lmY-6P-C5u"/>
-                            <constraint firstItem="c2o-8o-NEt" firstAttribute="top" secondItem="iSJ-0x-lzn" secondAttribute="bottom" constant="91" id="pwA-Af-pP4"/>
+                            <constraint firstItem="V6p-q8-kXM" firstAttribute="top" secondItem="g7d-G0-vkN" secondAttribute="bottom" id="msn-9O-Cqs"/>
+                            <constraint firstItem="c2o-8o-NEt" firstAttribute="top" secondItem="iSJ-0x-lzn" secondAttribute="bottom" id="pwA-Af-pP4"/>
                             <constraint firstItem="2Tg-Rn-Dxg" firstAttribute="leading" secondItem="EmC-bO-n3b" secondAttribute="leadingMargin" id="xdD-6J-BMx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d2V-a0-5A5"/>
+                    <connections>
+                        <outlet property="editButtonOutlet" destination="iSJ-0x-lzn" id="5Bi-x4-3cK"/>
+                        <outlet property="updateButtonOutlet" destination="g7d-G0-vkN" id="GWl-m9-gZ7"/>
+                        <outlet property="updateTaskTextField" destination="2Tg-Rn-Dxg" id="72r-sv-95c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eh2-CY-A5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

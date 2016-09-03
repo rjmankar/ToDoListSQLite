@@ -7,7 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tasks.h"
+#import "RMDatabaseManager.h"
 
-@interface ModifyController : UIViewController
+@interface ModifyController : UIViewController<UITextFieldDelegate>
+//{
+//    Tasks *selectedTask;
+//    NSString *priviousTextInTextField;
+//    NSString *newTextInTextField;
+//    
+//}
+
+@property(nonatomic,retain) Tasks *taskSelected;
+@property (strong, nonatomic) IBOutlet UITextField *updateTaskTextField;
+- (IBAction)editTaskButtonAction:(id)sender;
+- (IBAction)deleteTaskButtonAction:(id)sender;
+- (IBAction)updateTaskButtonAction:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *editButtonOutlet;
+@property (strong, nonatomic) IBOutlet UIButton *deleteButtonOutlet;
+@property (strong, nonatomic) IBOutlet UIButton *updateButtonOutlet;
 
 @end

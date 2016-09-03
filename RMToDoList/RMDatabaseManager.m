@@ -155,6 +155,24 @@
     
 }
 
+-(BOOL)updatePreviousInsertedTask:(Tasks *)taskModel{
+
+    NSString *queryToUpdateTask=[NSString stringWithFormat:@"UPDATE TODOLISTDATA SET TASK_NAME='%@',COMPLETED='%d', TASK_ID='%@'",taskModel.textName,taskModel.completed,taskModel.Task_iD];
+    
+    if ([[RMDatabaseManager sharedManager]executeGivenQuery:queryToUpdateTask]) {
+        NSLog(@"success: Updated Tasks %d",taskModel.Id);
+        return YES;
+    }
+    else
+    {
+        NSLog(@"Unable to update task.");
+                return NO;
+    }
+
+}
+
+
+
 
 
 

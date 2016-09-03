@@ -85,18 +85,14 @@ self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"t
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+
     ModifyController *modifyView=[self.storyboard instantiateViewControllerWithIdentifier:@"ModifyController"];
+    modifyView.taskSelected=[allTasksInList objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:modifyView animated:YES];
     
 }
 
     
-    
-
-
-
-
-
 
 -(void)insertTaskToDatabase:(NSString *)text {
     if (text.length > 0 && ![text isEqualToString:@""])

@@ -25,7 +25,8 @@
 -(NSArray *)getAllTask;
 
 -(BOOL)insertTask:(Tasks *)taskModel;
-
+-(BOOL)updatePreviousInsertedTask:(Tasks *)taskModel;
+-(void)deleteOneOfPreviousTask:(Tasks *)taskModel;
 
 
 @end
