@@ -21,6 +21,17 @@
     [self initialiseScreen];
     // Do any additional setup after loading the view.
 }
+-(void)checkText:(NSString *)previousText current:(NSString *)currentText {
+    
+    if ([currentText isEqualToString:previousText]) {
+        self.updateButtonOutlet.enabled = NO;
+    }
+    else {
+        self.updateButtonOutlet.enabled = YES;
+    }
+    
+    
+}
 
 -(void)initialiseScreen{
     
@@ -48,19 +59,43 @@
 */
 
 - (IBAction)editTaskButtonAction:(id)sender {
+    UIButton *button=sender;
+    if ([self.editButtonOutlet.titleLabel.text isEqualToString:@"Edit"]) {
+        
+        [button setTitle:@"Reset" forState:UIControlStateNormal];
+    self.updateTaskTextField.enabled=YES;
+        self.updateButtonOutlet.enabled=YES;
+        
+    }
 }
 
 - (IBAction)deleteTaskButtonAction:(id)sender {
 }
 
 - (IBAction)updateTaskButtonAction:(id)sender {
+    if ([[RMDatabaseManager sharedManager]updatePreviousInsertedTask:selectedTask]) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+    else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Unable to update" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:ok];
+}
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)updateTaskTextField {
-    [self.updateTaskTextField resignFirstResponder];
-//    NSString *tempText=self.updateTaskTextField;
     
+    selectedTask.textName=self.updateTaskTextField.text;
     
+[updateTaskTextField resignFirstResponder];
+    
+    newTextInTextField = updateTaskTextField.text;
+    [self checkText:priviousTextInTextField current:newTextInTextField];
     return YES;
+
 }
 @end

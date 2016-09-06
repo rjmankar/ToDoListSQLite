@@ -15,6 +15,8 @@
     Tasks *selectedTask;
     NSString *priviousTextInTextField;
     NSString *newTextInTextField;
+      NSString *changedText;
+    
 
     
 }
