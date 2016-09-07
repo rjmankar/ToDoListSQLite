@@ -70,6 +70,27 @@
 }
 
 - (IBAction)deleteTaskButtonAction:(id)sender {
+    
+    
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Are You Sure?" message:@"Once deleted, you will be unable to retrieve it back." preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[RMDatabaseManager sharedManager]deleteOneOfPreviousTask:selectedTask];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
 }
 
 - (IBAction)updateTaskButtonAction:(id)sender {
